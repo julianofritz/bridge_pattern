@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+
+  app:
+    build: .
+    container_name: bridge-app-1
+    volumes:
+      - .:/var/www
+    expose:
+      - 9003
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
